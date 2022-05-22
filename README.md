@@ -1,3 +1,3 @@
-# Hello World
+# WEB DEVELOPMENT COURSE BY CODINGDOJO
 
-This is a readme file for explaining
+This is a for submitting the assignments
