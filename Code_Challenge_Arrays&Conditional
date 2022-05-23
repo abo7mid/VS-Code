@@ -9,7 +9,7 @@ Code Snippet1
 |                |                               |
 |                |                               |
 |                |                               |
-|                |                               |\________________________________________________|                               
+|                |                               |                              
 
 
 Code Snippet2
@@ -21,7 +21,7 @@ Code Snippet2
 |                | "hashbrowns"                  | 
 |                |                               |
 |                |                               |
-|                |                               |\________________________________________________| 
+|                |                               |
 
 
 Code Snippet3
@@ -33,5 +33,5 @@ Code Snippet3
 | mvoieLibrary   |"Bamb","E.T","Toy Story","Zoro"|     |                |                               |
 | mvoieLibrary   |"Bamb","BJ","Toy Story","Zoro" |
 |                |                               |
-|                |                               |\________________________________________________| 
+|                |                               |
 
