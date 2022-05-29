@@ -5,7 +5,9 @@
 }
 
 .container{
+    
 }
+
 .header{
 
     background-color: silver;
@@ -38,8 +40,6 @@
 .add_dic{
     border: 3px solid black;
     width: 30%;
-    margin-left: 550px;
-    margin-top: -550px;
     height: 150px;
 }
 #search{
