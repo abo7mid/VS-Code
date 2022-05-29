@@ -1,0 +1,100 @@
+*{
+    border: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+}
+.header{
+
+    background-color: silver;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    
+}
+
+.btn{
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+    margin-right: 10px;
+    box-shadow: 3px 3px 1px black;
+    width: 60px;
+    height: 25px;
+}
+.add{
+    background-color: greenyellow;
+    color: black;
+    border: 1px solid black;
+    margin: 50px 50px;
+    box-shadow: 3px 3px 1px black;
+    width: 50%;
+    height: 30px;
+}
+.add_dic{
+    border: 3px solid black;
+    width: 30%;
+    margin-left: 550px;
+    margin-top: -550px;
+    height: 150px;
+}
+#search{
+    width: 40%;
+    border: 2px solid black;
+    height: 20px;
+}
+
+.body{
+    margin: 10px;
+    
+}
+.Fentry{
+    border: 3px solid black;
+    width: 50%;
+    margin-left: 15%;
+    margin-bottom: 10px;
+}
+.Sentry{
+    border: 3px solid black;
+    width: 50%;
+    margin-left: 15%;
+}
+.likes{
+    background-color: yellow;
+    color: black;
+    border: 1px solid black;
+    margin-left: 5%;
+    box-shadow: 3px 3px 1px black;
+    width: 60px;
+    height: 25px;
+    
+    
+}
+
+h1{
+    margin-left: 5%;
+}
+h3{
+    margin-left: 5%;
+    font-style: italic;
+
+}
+
+p{
+    /* margin-left: 160px; 
+    margin-top: -20px; */
+}
+
+.dojonary{
+
+    margin-left: 5px;
+    font-size: large;
+}
+span{
+    font-size: large;
+    font-weight: bold;
+}
