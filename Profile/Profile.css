@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body{
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card{
+    width: 100%;
+    background-color: #fff;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 2px solid #999;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+}
+.header{
+    background-color: #17a2b8;
+    height: 125px;
+    margin-bottom: 70px;
+}
+
+.body{
+    /* box-shadow: 2px 2px black; */
+    padding: 20px;
+
+}
+
+.body h1, .body h2, .body h3, .body p{
+    /* box-shadow: 2px 2px black; */
+    /* margin: 20px 0px; */
+
+
+
+}
+
+.avatar {
+    border-radius: 50%;
+    background-color: #fff;
+    height: 150px;
+    padding: 5px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.icon{
+    height: 20px;
+}
+
+a{
+    color: #3a81e6;
+}
+
+
+
+.connReq, .currConn , .edu{
+    
+    border: 2px solid #999;
+    margin-bottom: 20px;
+    align-items: center;
+
+}
+
+.header-2{
+    background-color: black;
+    height: 60px;
+    margin-bottom: 70px;
+
+
+
+}
+
+.icon-2{
+border-radius: 50%;
+height: 75px;
+}
+
+h2{
+    color: #fff;
+
+}
+h3{
+    display: flex;
+    border-right: 5px;
+    align-items: center;
+
+}
+img{
+    border-right:  5px;
+    align-items: center;
+    margin-bottom: 5px;
+
+}
+
+button {
+    margin: 10px;
+}
+
+p{
+        margin:  10px;
+        font-size: larger;
+
+    }
+.date{
+        color: #999;
+}
