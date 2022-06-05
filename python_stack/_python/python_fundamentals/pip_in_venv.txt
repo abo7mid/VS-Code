@@ -1,0 +1,30 @@
+in venv use pip instead of pip3
+
+pip list "this will print a list of available packges downloaded using pip install package_name"
+
+deactivate "this will deactivate venv thus activate global env"
+
+
+pip3 list "this will print a list of available packges withen global env"
+
+pip list "this will print a list of available packges withen venv
+when it is activated"
+
+source myEnvironments/py3Env/bin/activate "this will activate the virtual Environment "
+
+
+
+pip install Django=2.2.4  "this will print this information as it will install the Django version 2.2.4" 
+
+"Collecting Django==2.2.4
+  Using cached https://files.pythonhosted.org/packages/d6/57/66997ca6ef17d2d0f0ebcd860bc6778095ffee04077ca8985928175da358/Django-2.2.4-py3-none-any.whl
+Requirement already satisfied: pytz in ./py3Env/lib/python3.6/site-packages (from Django==2.2.4) (2022.1)
+Requirement already satisfied: sqlparse in ./py3Env/lib/python3.6/site-packages (from Django==2.2.4) (0.4.2)
+Installing collected packages: Django
+Successfully installed Django-2.2.4"
+
+pip freeze "this will print a pip formated file for installation as -r requirements.txt it is different than list in which it will include the package version "
+
+
+pip show Django "this will print details about the packge"
+pip uninstall Django "this will delete (uninstall) the Django package"
