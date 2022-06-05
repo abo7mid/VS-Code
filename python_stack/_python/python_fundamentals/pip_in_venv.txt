@@ -28,3 +28,5 @@ pip freeze "this will print a pip formated file for installation as -r requireme
 
 pip show Django "this will print details about the packge"
 pip uninstall Django "this will delete (uninstall) the Django package"
+
+#end
