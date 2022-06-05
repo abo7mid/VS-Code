@@ -42,4 +42,4 @@ hw = "Hello %s" % "world" 	# with literal values
 print("My name is %s and I'm %d" % (name, age))		# or with variables
 
 
-#ternary operator  shortcut for conditions   js and other languages are similar and python is different
+##ternary operator  shortcut for conditions   js and other languages are similar and python is different
