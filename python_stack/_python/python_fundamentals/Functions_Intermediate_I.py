@@ -34,7 +34,7 @@ def randint(min=0,max=100):
             num = random.random() + min * max -1
             return round(num)
 
-
+#not complete yet
 print(randint(min=1,max=10))
 
 
