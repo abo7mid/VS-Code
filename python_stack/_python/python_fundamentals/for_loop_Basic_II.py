@@ -66,7 +66,8 @@ print(count_positives([1,6,-4,-2,-7,4]))
 def sum_total(alist):
     total = 0
     for i in alist:
-        ## ATTENTION HERE ## do not use total=+i = total=(+1)
+        ## ATTENTION HERE ## 
+        # do not use total=+i which is equal to total=(+1)
         total+=i  #total = total + i
     return total
 
