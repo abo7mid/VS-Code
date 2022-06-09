@@ -1,0 +1,37 @@
+
+
+Code Snippet1
+ _________________________________________________
+|variable        |        values                 |
+|------------------------------------------------|
+| auntContactInfo| "Paula","Smith","1234 Main    |
+|                | Street","St. Louis","MO",12345|
+|                |                               |
+|                |                               |
+|                |                               |
+|                |                               |                              
+
+
+Code Snippet2
+ _________________________________________________
+|variable        |        values                 |
+|------------------------------------------------|
+| frozen         | "broccoli", "ice cream"       |
+| frozen         | "broccoli","ice cream",       |
+|                | "hashbrowns"                  | 
+|                |                               |
+|                |                               |
+|                |                               |
+
+
+Code Snippet3
+ _________________________________________________
+|variable        |        values                 |
+|------------------------------------------------|
+| mvoieLibrary   |"Bambi","E.T","Toy Story"      |
+|                |                               |
+| mvoieLibrary   |"Bamb","E.T","Toy Story","Zoro"|     |                |                               |
+| mvoieLibrary   |"Bamb","BJ","Toy Story","Zoro" |
+|                |                               |
+|                |                               |
+
