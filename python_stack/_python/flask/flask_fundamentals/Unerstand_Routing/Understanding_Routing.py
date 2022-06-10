@@ -23,7 +23,7 @@ def say(name):
 
 @app.route('/repeat/<int:times>/<word>')
 def checkInt(times,word):
-        print(word*int(times))
+        # print(word*int(times))
         return f"{word} " * int(times)
 
 
@@ -34,7 +34,7 @@ def checkStr(times,word):
 
 @app.errorhandler(404)
 def page_not_Found(e):
-    print("404")
+    # print("404")
     return "Sorry! No response. Try again."
 
 
