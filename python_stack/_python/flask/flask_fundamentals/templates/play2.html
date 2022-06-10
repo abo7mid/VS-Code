@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground 2</title>
+</head>
+<body>
+    <h1 style="text-align: center; 
+    /* border: 1px solid;  */
+    width: 700px; margin: auto;">Welcome!</h1>
+    {# 
+    Level 2
+    #When a user visits localhost:5000/play/(x),
+    #have it display the beautiful looking blue boxes x times.
+    #For example, localhost:5000/play/7 should display these blue boxes 7 times.
+    #Calling localhost:5000/play/35 would display these blue boxes 35 times. 
+    #Please remember that x originally is a string, and if you want to use it as an integer,
+    #you must first convert it to integer using int(). For example int("7") returns 7.
+    #}
+
+    <!-- this comments also works -->
+<!-- 
+    {% macro hello(name) %}
+        Hello {{ name }}!
+    {% endmacro %} -->
+
+
+    <div style="display: flex; flex-wrap: wrap;
+    /* border: 1px solid red;  */
+    width: 700px; justify-content: flex-start; margin: auto; ">
+    {% for i in range(0,times)%}
+            <div style=" display: flex; background-color: rgb(72, 72, 241); border: 3px solid; height:200px; width:200px; margin:20px 10px"></div>
+    {% endfor %}
+</div>
+
+
+    
+</body>
+</html>
