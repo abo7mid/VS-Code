@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckerBoard::</title>
+    <style>
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            /* border: 1px solid ; */
+            margin: 0px auto;
+            width: 500px;
+        }
+
+        .box{
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .black{
+            background-color: black;
+            /* border-radius: 5px; */
+        }
+
+    </style>
+</head>
+<body>
+    {% for i in range(0,boxY) %}
+    <div id="container">
+        {% if i % 2 !=1 %}
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        {% else %}
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        <div class="box black"></div>
+        <div class="box white"></div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>
