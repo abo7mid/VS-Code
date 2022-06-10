@@ -1,23 +1,43 @@
-from code import interact
 
 
 class BankAccount:
-
-    def __init__(self,int_rate=0,balance=0):
+    accountNum = 0
+    def __init__(self,int_rate=0.0,balance=0,accountNum=1):
         self.int_rate = int_rate
         self.balance = balance
+        BankAccount.accountNum += accountNum
 
 
-    def deposit(self,amount):
-        self.balance += amount
+    def deposit(self,accountNum,amount):
+        accountNum.balance += amount
+        self.sendSMS(f"{amount} has been deposited to your account")
         return self
 
 
-    def withdraw(self,amount):
-        if self.balance < amount:
+
+    # Making this function run every time a transection is made 
+    # (withdrawal,deposit,transfer,online payment etc)
+    def sendSMS(self,message):
+        print(message)
+
+
+
+
+    def withdraw(self,accountNum,amount):
+        if accountNum.balance < amount:
             print("insufficient funds: Chagring a $5 fee")
             self.balance -= 5
-        self.balance -= amount
+        self.sendSMS(f"{amount} has been deducted from your account")
+        accountNum.balance -= amount
+        return self
+
+
+        
+    def transfer_money(self,beneficiary,amount):
+        if(self.balance > amount):
+            self.balance -= amount
+            beneficiary.balance = beneficiary.balance + amount
+            print(f"A transection has been made to {beneficiary}")
         return self
 
 
@@ -35,8 +55,3 @@ class BankAccount:
         return self
 
 
-account1 = BankAccount(0.01,500).deposit(100).withdraw(599).display_account_info().yield_interest()
-
-account2 = BankAccount(0.01,0)
-
-account2.deposit(100).deposit(200).withdraw(100).withdraw(100).withdraw(100).withdraw(0).yield_interest().display_account_info()
