@@ -9,6 +9,8 @@ app.secret_key = "123"
 def index():
     return render_template("index.html")
 
+
+
 @app.route('/users',methods=['POST'])
 def create_user():
     print(request.form)
