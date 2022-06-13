@@ -1,0 +1,14 @@
+.dark-mode{
+    color: white;
+    background-color: darkslategray;
+    width: 150px;
+    height: 100px;
+}
+
+
+.light-mode{
+    color: black;
+    background-color: aliceblue;
+    width: 150px;
+    height: 100px;
+}

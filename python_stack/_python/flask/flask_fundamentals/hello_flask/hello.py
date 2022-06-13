@@ -32,6 +32,25 @@ def checkStr(times,word):
     return "must be an integer"
 
 
+@app.route("/lists")
+
+def render_lists():
+    students_info = [
+            {"name":'Ahmed',"age":27},
+            {"name":'SM',"age":24},
+            {"name":'MM',"age":22},
+            {"name":'AM',"age":25}
+    ]
+
+    student_courses = {
+        "name":"Ahmed",
+        "age":25,
+        "country":"SA",
+    }
+    
+    return render_template("list.html",random_numbers = [3,5,5],students = students_info)
+
+
 @app.errorhandler(404)
 def page_not_Found(e):
     print("404")
