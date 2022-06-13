@@ -17,10 +17,10 @@ def create_user():
 
     # we could use global var instead of sessions
     # I'm not sure if this is a good prictise for now
-    global name 
-    name = request.form['name']
-    global email 
-    email = request.form['email']
+    # global name 
+    # name = request.form['name']
+    # global email 
+    # email = request.form['email']
     
     return redirect("/show")
     # return render_template('show.html',template_name=form_name,template_email=form_email)
@@ -30,7 +30,8 @@ def create_user():
 def show_user():
     print("Showing the User Info From the Form")
     print(request.form)
-    return render_template("show.html",template_name=name,template_email=email)
+    return render_template('show.html')
+    # return render_template("show.html",template_name=name,template_email=email)
 
 
 if __name__ == "__main__":
