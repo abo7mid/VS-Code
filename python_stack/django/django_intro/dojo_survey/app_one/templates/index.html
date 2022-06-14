@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+</head>
+</head>
+<body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+        <form action="/result" method="post">
+            {% csrf_token %}
+            <div id="container">
+
+            <div id="container2">
+            <div class="rows">
+                <label for="">Your Name: </label> 
+                <input name="name" type="text">
+            </div>
+            
+            <div class="rows">
+                <label class="dojo" for="location">Dojo Location:</label> 
+                <select name="location" id="location">
+                    <option value="Riyadh">Riyadh</option>
+                    <option value="San Jose">San Jose</option>
+                </select>
+            </div>
+
+            <div class="rows">
+                <label class="fav-lang" for="langs">Favorite Language: </label>
+                <select name="langs" id="langs">
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+
+            <div class="rows comment">
+                Comment (optional):
+                <textarea name="comment" cols="45" rows="5">
+                </textarea>
+            </div>
+            <input class="btn" type="submit" value="Button">
+
+            </div>
+        </div>
+
+        </form>
+</body>
+</html>
