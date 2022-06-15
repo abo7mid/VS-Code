@@ -28,6 +28,17 @@
             </h1>
         </div>
     </div>
+
+    <form action="/time_display" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="enter your name">
+        <label for="age">Age :</label>
+        <input type="text" id="age" name="age" placeholder="enter your age">
+        <button>another page time</button>
+    </form>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+
+{% block head %} 
+<title>test</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+
+
+
+
+{% block content  %}
+
+<h1>Info From Server:</h1>
+<p>Name: {{name}}</p>
+<p>Color: {{favorite_color}}</p>
+<p>Pets</p>
+<ul>
+    <!-- Note: You cannot use square brackets with Django's template engine!
+    Instead, use dot notation. 
+    For example, array[0] becomes {{ array.0 }} -->
+<!-- 
+    {# this won't be rendered #}
+    {% comment %} {%endcomment%} -->
+
+    {% for pet in pets %}
+    <li>{{pet}}</li>
+    {% endfor %}
+</ul>
+
+<img src="{% static 'imgs/cat.jpeg' %}" alt="">
+
+{% endblock %}

@@ -35,3 +35,14 @@ def destroy(request, num):
 
 def json(request):
     return JsonResponse({"title": "My first blog", "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit."})
+
+
+
+def templates(request):
+
+    context = {
+        "name":"Ahmed",
+        "favorite_color":"dark",
+        "pets":["Bruce","Fitz","Georgie"]
+    }
+    return render(request,"index.html",context)
