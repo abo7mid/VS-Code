@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/process" method="post">
+
+            {% csrf_token %}
+            <h1>Welcome to the Great Number Game!</h1>
+            <h3>I am thinking of a number between 1 and 100</h3>
+            <h3>Take a guess!</h3>
+            <input name="guess" type="text">
+            <button name="submit" type="submit">Submit</button>
+
+            {% if generated_num > guessed_num %}
+            <div class="DoesNotMatch">
+                {{ guessed_num }} Too low!
+            </div>
+
+            {% elif guessed_num > generated_num %}
+            <div class="DoesNotMatch">
+                {{guessed_num}} Too high!
+            </div>
+            {%endif%}
+
+            <!-- guessed_num {{ guessed_num }}
+            generated_num {{ generated_num }}
+            
+            {% if guessed_num == generated_num %}
+            <div class="Match">
+                <h5>
+                    {{ guessed_num }} was the number!
+                </h5>
+                <a href="/">Play again!</a>
+            </div>
+            {% endif %} -->
+
+        </form>
+    </div>
+</body>
+
+</html>
