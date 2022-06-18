@@ -1,0 +1,46 @@
+In [5]: from dojo_ninjas_app.models import dojos,ninjas
+In [6]: dojos.objects.create(name="dojo1",city="New York",state="NY")
+In [7]: dojos.objects.create(name="dojo2",city="California",state="LA")
+In [8]: dojos.objects.create(name="dojo3",city="Miami",state="FL")
+
+In [9]: dojos.objects.exclude(id=4).delete()
+
+In [10]: dojos.objects.create(name="dojo1",city="New York",state="NY")
+In [11]: dojos.objects.create(name="dojo2",city="California",state="LA")
+In [12]: dojos.objects.create(name="dojo3",city="Miami",state="FL")
+
+In [25]: dojo1 = dojos.objects.get(id=4)
+In [28]: ninjas.objects.create(first_name="Ahmed",last_name="Alnadawy",dojo=dojo1)
+In [29]: ninjas.objects.create(first_name="Khaled",last_name="Aleadini",dojo=dojo1)
+In [30]: ninjas.objects.create(first_name="Raghd",last_name="AlJabr",dojo=dojo1)
+In [31]: ninjas.objects.create(first_name="Norah",last_name="Alghomaijan",dojo=dojo1)
+
+
+In [44]: dojos.objects.filter(id=4).update(name = "codingdojo")
+In [46]: dojos.objects.filter(id=4).update(city = "online")
+In [47]: dojos.objects.filter(id=4).update(state = "OL")
+
+In [48]: dojo2 = dojos.objects.get(id=5)
+
+In [50]: ninjas.objects.create(first_name="Abdoh",last_name="Ardi",dojo=dojo2)
+In [51]: ninjas.objects.create(first_name="Fatimah",last_name="Alghamdi",dojo=dojo2)
+In [52]: ninjas.objects.create(first_name="Hattan",last_name="Althobaiti",dojo=dojo2)
+In [53]: ninjas.objects.create(first_name="Huda",last_name="Almedwah",dojo=dojo2)
+
+In [55]: dojo3 = dojos.objects.get(id=6)
+
+In [56]: ninjas.objects.create(first_name="Ahmed",last_name="Fatahallh",dojo=dojo3)
+In [57]: ninjas.objects.create(first_name="Hussein",last_name="Dimessi",dojo=dojo3)
+In [58]: ninjas.objects.create(first_name="Lloyd",last_name="",dojo=dojo3)
+In [59]: ninjas.objects.create(first_name="Amro",last_name="Handousa",dojo=dojo3)
+
+
+In [65]: ninjas.objects.filter(dojo=4)
+In [66]: ninjas.objects.filter(dojo=6)
+In [70]: ninjas.objects.filter(dojo=6).last()
+In [71]: dojos.objects.create(name="SDA dojo",city="Riyadh",state="RY",desc="Saudi Digital Academy")
+FieldDoesNotExist: dojos has no field named 'desc'
+In [76]: exit
+
+after adding new fields exit the shell and run the shell again. this step is necessary so that added fields take place  
+In [2]: dojos.objects.create(name="SDA dojo",city="Riyadh",state="RY",desc="Saudi Digital Academy")
