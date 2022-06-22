@@ -100,6 +100,6 @@ def view_author(request, id):
 
 def addAuthorToBook(request):
     return redirect('/')
+
 def addBookToAuthor(request):
     return redirect('/')
-    pass
