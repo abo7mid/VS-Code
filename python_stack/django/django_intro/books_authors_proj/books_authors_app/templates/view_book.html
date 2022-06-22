@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block head%}
+{%endblock%}
+
+{%block content%}
+
+{%block menu%}
+{%endblock%}
+<div class="container">
+
+    <h1>{{book.title}}</h1>
+    <h6>ID {{book.id}}</h6>
+    <h5><span>
+            Desciption:
+        </span>
+        {{book.desc}}
+    </h5>
+
+
+    <h4>Authors </h4>
+    {% for author in book.authors.all %}
+    <ul>
+        <li>
+            {{author.firstname}} {{author.lastname}}
+        </li>
+    </ul>
+    {%endfor%}
+
+
+
+
+    <div class="row">
+        <div class="col">
+            <select class="form-select" style="width:auto;" name="select">
+                {%for author in authors.all%}
+                <option value="">{{author.firstname}} {{author.lastname}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="col">
+            <form action="/addAuthorToBook" method="post">
+                {%csrf_token%}
+                <input class="btn btn-primary" type="submit" value="Add"><br>
+            </form>
+        </div>
+    </div>
+    {%endblock%}
+</div>

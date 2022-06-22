@@ -1,0 +1,83 @@
+{%extends 'base.html'%}
+
+{%block head%}{%endblock%}
+
+<body>
+    {%block content%} 
+    <div class="container">
+        
+
+        {%block menu%} 
+
+        {%endblock%}
+        <div class="row">
+
+            <div class="col border">
+
+                <h4>Add an Author</h4>
+                {% if messages %}
+                <ul class="alert alert-danger">
+
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{message}}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+
+                <form action="/add_author" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row ">
+
+                        <label class="col-sm-2 col-form-label" for="title">First Name</label>
+
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="title" name="firstname">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="desc">Last Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="desc" name="lastname">
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="notes">Notes</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="notes" name="notes">
+                        </div>
+
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Add">
+                </form>
+            </div>
+
+
+            <div class="col table border">
+                <table class="table">
+                    <tr class="tr">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+
+                    {%for author in authors%}
+                    <tr>
+                        <td>{{author.id}}</td>
+                        <td>{{author.firstname}} {{author.lastname}}</td>
+                        <td>
+                            <a href="/authors/{{author.id}}">view</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+
+                </table>
+            </div>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+
+</html>
