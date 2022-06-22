@@ -58,14 +58,14 @@ def add_author(request):
         else:
             author = Author.objects.create(
                 notes=request.POST["notes"], lastname=request.POST['lastname'], firstname=request.POST['firstname'])
-            author = Book()
-            author.firstname = request.POST['firstname']
-            author.lastname = request.POST['lastname']
-            author.notes = request.POST['notes']
-            author.save()
+            # author = Author()
+            # author.firstname = request.POST['firstname']
+            # author.lastname = request.POST['lastname']
+            # author.notes = request.POST['notes']
+            # author.save()
             messages.success(request, "Author successfully Created")
             return redirect("/authors")
-    return render(request, 'authors.html')
+    return redirect('/authors')
 
 
 def view_book(request, id):
@@ -76,6 +76,12 @@ def view_book(request, id):
         "authors": authors
     }
     return render(request, 'view_book.html', context=context)
+
+
+def delete_book(request,id):
+    Book.objects.filter(id=id).delete()
+    print(f"book {id} deleted")
+    return redirect("/")
 
 
 def authors(request):
@@ -96,6 +102,11 @@ def view_author(request, id):
     }
     return render(request, 'view_author.html', context=context)
 
+
+def delete_author(request,id):
+    Author.objects.filter(id=id).delete()
+    print(f"Author {id} deleted")
+    return redirect("/authors")
 
 
 def addAuthorToBook(request):
