@@ -15,10 +15,9 @@
 
                 <h4>Add a Book</h4>
                 {% if messages %}
-                <ul class="alert alert-danger">
-
+                <ul class="messages">
                     {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{message}}</li>
+                    <li {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>{{message}}</li>
                     {% endfor %}
                 </ul>
 

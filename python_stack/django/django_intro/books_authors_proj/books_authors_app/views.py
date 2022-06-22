@@ -63,7 +63,7 @@ def add_author(request):
             author.lastname = request.POST['lastname']
             author.notes = request.POST['notes']
             author.save()
-            messages.success(request, "Author successfully Assigned")
+            messages.success(request, "Author successfully Created")
             return redirect("/authors")
     return render(request, 'authors.html')
 
