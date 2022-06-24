@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sports Leagues</title>
+</head>
+
+<body>
+	<!-- <h1>Leagues</h1>
+	<ol>
+		{% for league in leagues %}
+		<li>{{league.name}}</li>
+		{% empty %}
+		<p>No leagues found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a
+				href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol> -->
+	<h1>Teams</h1>
+	<ol>
+		{% for team in teams %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{% empty %}
+		<p>No teams found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a
+				href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol>
+
+	<h1>Players</h1>
+	<ol>
+		{% for player in players %}
+		<li>{{player.first_name}} {{player.last_name}}</li>
+		{% empty %}
+		<p>No teams found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a
+				href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol>
+
+	<h1>Baseball's Leagues</h1>
+	<ol> 
+		{%for league in baseball %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+	<h1>Womens' leagues</h1>
+	<ol> 
+		{%for league in women  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	<h1>searching Hockey by name field</h1>
+	<ol> 
+		{%for league in name  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	
+	<h1>searching Hockey by sport field</h1>
+	<ol> 
+		{%for league in sport  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	<h1>All Leagues ohter than football</h1>
+	<ol> 
+		{%for league in notfootball  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	
+	<h1>All Leagues contains conference</h1>
+	<ol> 
+		{%for league in conference  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+	<h1>All Leagues in Atlantic region</h1>
+	<ol> 
+		{%for league in atlantic  %}
+		<li>{{league.name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	<h1>All Teams based in Dallas</h1>
+	<ol> 
+		{%for team in dallas  %}
+		<li>{{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+
+
+
+
+	<h1>All Raptors Teams </h1>
+	<ol> 
+		{%for team in raptors  %}
+		<li>{{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+
+
+	<h1>All Teams Whose location include "City" </h1>
+	<ol> 
+		{%for team in city  %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+	<h1>All Teams Whose names starts with "T" </h1>
+	<ol> 
+		{%for team in t  %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	<h1>Returns all Teams ordered alphabetically by location </h1>
+	<ol> 
+		{%for team in orderByLocation  %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+	
+	<h1>Returns all Teams, ordered by team name in reverse alphabetically order </h1>
+	<ol> 
+		{%for team in orderByLocationR  %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+	<h1>Find every player with first name "Joshua"</h1>
+	<ol>
+		{% for player in joshua %}
+		<li>{{player.first_name}} {{player.last_name}}</li>
+		{% empty %}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+
+	<h1>Find every player with last name "Cooper" EXCEPT FOR Joshua</h1>
+	<ol>
+		{% for player in cooper %}
+		<li>{{player.first_name}} {{player.last_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+
+
+
+
+	<h1>Find all players with first name "Alexander" OR first name "Wyatt"</h1>
+	<ol>
+		{% for player in Alex_Wya %}
+		<li>{{player.first_name}} {{player.last_name}}</li>
+		{%empty%}
+		<p>No record found</p>
+		{% endfor %}
+	</ol>
+</body>
+
+</html>
