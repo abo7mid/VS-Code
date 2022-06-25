@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+
+
+{%block head%}
+<title>Read (One)</title>
+{%endblock%}
+
+
+{%block title%}
+TV Show {{show.id}}
+{%endblock%}
+
+{%block content%}
+
+
+<label class="form-label" for="">Title: {{show.title}}</label><br>
+<label class="form-label" for="">Netwrok: {{show.network}}</label><br>
+<label class="form-label" for="">Release Date: {{show.release_date}}</label><br>
+<label class="form-label" for="">Description: {{show.desc}}</label><br>
+
+<div class="mt-5">
+
+    <label for="">Last Updated: {{show.updated_at}}</label>
+<div class="col">
+
+    <a href="{% url 'edit' show.id %}">Edit</a> | <a href="{% url 'delete' show.id %}">Delete</a>
+</div>
+</div>
+
+{%endblock%}

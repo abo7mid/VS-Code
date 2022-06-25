@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{%block head%}
+<title>Read (All)</title>
+{%endblock%}
+
+{%block content%}
+<h1 class="mx-auto mb-5" style="width:700px;">All Shows</h1>
+
+<table class="table mx-auto" style="width: 700px;">
+    {% if messages %}
+    <ul class="message">
+        {% for message in messages %}
+        <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Network</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for show in shows%}
+        <tr>
+            <td>{{show.id}}</td>
+            <td>{{show.title}}</td>
+            <td>{{show.release_date}}</td>
+            <td>
+                <!-- <form action="" method="post"> -->
+                    <a href="{% url 'view'   show.id %}">Show </a><span>|</span>
+                    <a href="{% url 'edit'   show.id %}">Edit </a><span>|</span>
+                    <a href="{% url 'delete' show.id %}">Delete</a>
+                <!-- </form> -->
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<div class="mx-auto" style="width: 700px;">
+    <a href="{% url 'add' %}">Add New Show</a>
+</div>
+{%endblock%}

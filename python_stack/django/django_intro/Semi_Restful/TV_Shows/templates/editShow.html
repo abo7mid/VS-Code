@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{% block head %}
+{% endblock %}
+
+
+{% block title %}
+TV Show {{show.id}}
+{% endblock %}
+
+
+{% block content %}
+{% comment %} be carefull this html <!-- {% url 'update' show.id %} --> comment does not work use template comment instead 
+no need for action the same function's route will check if post, thus defferentiate between GET & POST {%endcomment%}
+
+{%if updated%}
+<h1>updated</h1>
+{%endif%}
+<form class="form mx-5" action="" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input class="form-control" type="text" name="title" id="title" value="{{show.title}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="network">Network</label>
+        <input class="form-control" type="text" name="network" id="network" value="{{show.network}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="date">Release Date</label>
+        <input class="form-control" type="date" name="release_date" id="date" value="{{date}}">
+        <!--YYYY-MM-DD date will not be displyed if not in the following format and of str type  -->
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="desc">Description</label>
+        <input class="form-control" type="text" name="desc" id="desc" value="{{show.desc}}">
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Update">
+</form>
+{% endblock %}

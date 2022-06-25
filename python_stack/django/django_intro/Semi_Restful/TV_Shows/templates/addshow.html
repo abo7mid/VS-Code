@@ -1,0 +1,49 @@
+{%extends "base.html"%}
+
+
+
+{%block head%}
+<title>Create</title>
+{%endblock%}
+
+{%block title%}
+<h1>Add a New Show</h1>
+{%endblock%}
+
+
+
+{%block content%}
+
+    {% if messages %}
+    <ul class="message">
+        {% for message in messages %}
+        <li {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+<form class="form mx-5" action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+
+        <label class="form-label" for="title">Title</label>
+        <input class="form-control" type="text" name="title" id="title">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="network">Network</label>
+        <input class="form-control" type="text" name="network" id="network">
+    </div>
+    <div class="mb-3">
+
+        <label class="form-label" for="date">Release Date</label>
+        <input class="form-control" type="date" name="release_date" id="date">
+    </div>
+    <div class="mb-3">
+
+        <label class="form-label" for="desc">Description</label>
+        <input class="form-control" type="text" name="desc" id="desc">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Create">
+</form>
+{%endblock%}
