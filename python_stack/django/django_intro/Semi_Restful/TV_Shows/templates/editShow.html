@@ -13,9 +13,10 @@ TV Show {{show.id}}
 {% comment %} be carefull this html <!-- {% url 'update' show.id %} --> comment does not work use template comment instead 
 no need for action the same function's route will check if post, thus defferentiate between GET & POST {%endcomment%}
 
-{%if updated%}
+<!-- {%if updated%}
 <h1>updated</h1>
-{%endif%}
+{%endif%} -->
+
 <form class="form mx-5" action="" method="post">
     {% csrf_token %}
     <div class="mb-3">

@@ -7,12 +7,22 @@
 {%endblock%}
 
 
+
 {%block title%}
 TV Show {{show.id}}
 {%endblock%}
 
 {%block content%}
+{% if messages %}
+{% if updated %}
 
+<ul class="message">
+    {% for message in messages %}
+    <li {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>{{message}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endif %}
 
 <label class="form-label" for="">Title: {{show.title}}</label><br>
 <label class="form-label" for="">Netwrok: {{show.network}}</label><br>

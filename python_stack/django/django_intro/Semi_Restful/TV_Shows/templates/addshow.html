@@ -14,10 +14,10 @@
 
 {%block content%}
 
-    {% if messages %}
+    {% if messages.tags == error %}
     <ul class="message">
         {% for message in messages %}
-        <li {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</li>
+        <p {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</p>
         {% endfor %}
     </ul>
     {% endif %}
