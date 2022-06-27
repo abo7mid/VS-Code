@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{% block head%}
+<title>Add a student to all bootcamp courses</title>
+{% endblock %}
+
+
+{% block content%}
+
+<div class="m-5">
+    <h1>
+        Are you sure you want to delete the following course?
+    </h1>
+
+
+    <div class="m-5">
+
+        <label class="label-form">Name</label>
+        <label class="label-form" for="">
+            {{course.courseName}}
+        </label>
+
+    </div>
+
+<div class="m-5">
+
+    <label class="label-form">Description</label>
+    <label class="label-form" for="">
+        {{course.courseDesc.DescText}}
+    </label>
+</div>
+</div>
+
+
+
+<form class="m-5" action="" method="post">
+    <div class="row m-5">
+        {% csrf_token %}
+        <div class="col-1 m-5">
+            <input class="btn btn-primary" type="submit" value="No" name="no">
+        </div>
+
+        <div class="col-2 m-5">
+            <input class="btn btn-danger" type="submit" value="Yes! I want to delete this" name="yes">
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{%extends 'base.html'%}
+
+
+{% block head%}
+<title>Add a student to all bootcamp courses</title>
+{% endblock %}
+
+
+{% block content%}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <p {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>{{message}}</p>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>Add a new course</h1>
+
+<form class="mb-5" action="" method="post">
+    {%csrf_token%}
+<div class="mb-3">
+    <label class="form-label" for="name">Course Name</label>
+    <input class="form-control" type="text" name="name" id="name">
+</div>
+
+<div class="mb-3">
+    <label class="form-label" for="desc">Course Description</label>
+    <input class="form-control" type="text" name="desc" id="desc">
+</div>
+    
+        <input class="btn btn-primary" type="submit" value="Add">
+</form>
+
+
+<div class="mb-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for course in courses %}
+            <tr>
+                <td>{{course.courseName}}</td>
+                <td>{{course.courseDesc.DescText}}</td>
+                <td>{{course.created_at}}</td>
+                
+                <td><a href="{% url 'remove' course.id %}">remove</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
