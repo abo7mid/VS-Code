@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>The Wall</title>
+{% endblock %}
+
+{%block navbar%}
+<div class="row">
+    <h3 class="col-7 m-3">CodingDojo Wall</h3>
+    <h6 class="col-3 mt-3">Welcome, {{user.firstname}}!</h6>
+
+    <a class="col-1 mt-3" href="/logout">logout</a>
+    <div class="border"></div>
+
+</div>
+{%endblock%}
+
+{% block content %}
+
+<div class="container m-3">
+    <h3 class="m-2">Post a message</h3>
+    <form action="" method="post">
+        {%csrf_token%}
+        <textarea class="row" style="vertical-align: top; resize: none; width: 100%;" name="message" id="" ></textarea>
+        <input class="btn btn-primary mt-3" type="submit" value="Post a message" name="postmessage">
+    </form>
+    
+    <div>
+        {% for message in messages%}
+        <h5 class="mt-5 ">{{message.user.firstname}} - {{message.created_at}} </h5>
+            <p class="m-3 mt-0 border" style="vertical-align: text-top;">{{message.message}}</p>
+
+        <div class="m-2 mt-0">
+
+            {% for comment in comments%}
+            {% if message.id == comment.message.id%}
+            <h5 class="m-2 mt-1 mb-1">{{comment.user.firstname}} - {{comment.created_at}}</h5>
+            <p class="border m-2 mt-2 mb-2" style="vertical-align: text-top;">{{comment.comment}}</p>
+            {%endif%}
+            {%endfor%}
+            
+            <h4>Post a comment</h4>
+            <form action="" method="post">
+                {%csrf_token%}
+                
+                <textarea class="row" style="overflow-y: auto; resize: none; width: 100%;" name="comment" id=""></textarea>
+                <input class="btn btn-success mt-3" type="submit" value="Post a comment" name="postcomment">
+                <input type="hidden" name="messageid" value="{{message.id}}">
+            </form>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
