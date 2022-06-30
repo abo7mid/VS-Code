@@ -2,8 +2,8 @@ django-admin startproject $1
 cd $1
 python manage.py startapp $2
 
-sed -i '14 from django.contrib import messages' $1/settings.py
-sed -i "39 i'app_one', " $1/settings.py ##we need a tab befor 'app_one'
+sed -i '14 i from django.contrib import messages' $1/settings.py
+sed -i "39 i'$2', " $1/settings.py ##we need a tab befor 'app_one'
 sed -i "42 i MESSAGE_TAGS = {\n\nmessages.ERROR:'danger'\n} " $1/settings.py
 #done with settings.py
 
