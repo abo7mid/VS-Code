@@ -9,3 +9,22 @@ Question | Expected Output
 5. Find everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players | Joshua Long, Joshua White, Joshua Smith
 6. Find all teams that have had 12 or more players, past and present.  (HINT: Look up the Django `annotate` function.) | Dallas Nets, California Padres, Montreal White Sox, Alberta Texans, Puerto Rico Breakers, South Carolina Wolverines, Washington Roughriders, Edmonton Warriors, Toronto Kings, Wisconsin Rams, Michigan Timberwolves, Phoenix Rays, Ontario Gunslingers, Texas Diamondbacks, Oregon Colts, Mexico City Cave Spiders, Raleigh Bulls, Montreal Wild, Wisconsin Devils, Indiana Royals, Maryland Cowboys, Ontario Outlaws, Dallas Angels, Kansas City Spurs
 7. Show all players, sorted by the number of teams they've played for | *too many to list, but the first few are Olivia Rodriguez, Ryan Phillips, and Luke Bell*
+
+
+how a list (rows or records) Model.objects.all() returns is represented
+
+player = [
+    {
+        "id":1,
+        "first_name":"Matthew",
+        "last_name":"Rivera",
+        "curr_team":41
+        },
+            {
+        "id":2,
+        "first_name":"Landon",
+        "last_name":"Richardson",
+        "curr_team":1
+        }
+    
+    ]

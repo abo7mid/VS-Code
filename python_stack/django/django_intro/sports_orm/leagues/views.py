@@ -32,7 +32,7 @@ def index(request):
 	return render(request, "leagues/index.html", context)
 
 def make_data(request):
-	team_maker.gen_leagues(10)
+	team_maker.gen_leagues(25)
 	team_maker.gen_teams(50)
 	team_maker.gen_players(200)
 

@@ -16,8 +16,8 @@ def index(request):
             errors = User.objects.validate(request.POST)
             if len(errors) > 0:
                 print(errors)
-                print(type(request.POST['password']))
-                print(request.POST['confirmPassword'])
+                # print(type(request.POST['password']))
+                # print(request.POST['confirmPassword'])
                 for key, value in errors.items():
                     messages.error(request, value)
                     return redirect('/')
@@ -100,11 +100,6 @@ def wall(request):
 
                     comments = Comment.objects.filter(message=request.POST.get('messageid')).last()
                     # print(comment.id,request.POST['comment'])
-
-
-
-
-
 
         return render(request, 'wall.html', context)
 
