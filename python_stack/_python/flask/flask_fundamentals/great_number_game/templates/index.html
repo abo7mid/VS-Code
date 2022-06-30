@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<title>Great Number Game</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="/" method="POST">
+        <h1 class="text-center">Welcome to the Great Number Game!</h1>
+        <h5 class="text-center">I am thinking of a number between 1 and 100</h5>
+        <h5 class="text-center">Take a guess!</h5>
+        <input id="num" name="num" class="form-control" type="text">
+
+        <h5>
+        </h5>
+        <button class="mb-5 form-control">Submit</button>
+
+
+    </form>
+    <h1>
+    </h1>
+    {% if context.value == 'high'%}
+    <div style="height:200px ;background-color: rgb(239, 12, 12);" class="border border-bottom-20 border-danger">
+        <h3 class="text-center mt-5">
+            Too High
+        </h3>
+    </div>
+    {% elif context.value == 'low'%}
+    <div style="height:200px ;background-color: rgb(245, 8, 8);" class="border border border-danger">
+        <h3 class="text-center mt-5">
+            Too Low        
+        </h3> 
+    </div>
+    {% elif context.value == 'hit'%}
+    <div style="height:200px ;background-color: rgb(34, 242, 7);" class="border border-bottom-20 border-success">
+        <h3 class="text-center mt-5 mb-5">
+            Correct
+        </h3>
+        <div class="text-center"><a href="/">Play again</a></div>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}
