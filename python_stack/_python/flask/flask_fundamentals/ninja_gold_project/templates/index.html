@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold Game</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container1">
+        Your Gold: <input name="gold" type="text" value="{{ context.allgold }}">
+    </div>
+
+    <div class="container2">
+        <div class="farm">
+            <h3>Farm</h3>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+
+                <input type="hidden" name="which_form" value="farm">
+                <input class="btn" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        
+        <div class="cave">
+            <h3>Cave</h3>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+
+                <input type="hidden" name="which_form" value="cave">
+                <input class="btn" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        
+        <div class="house">
+            <h3>House</h3>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="post">
+
+                <input type="hidden" name="which_form" value="house">
+                <input class="btn" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        
+        <div class="quest">
+            <h3>Quest</h3>
+            <p>(earns/takes 0 - 50 gold)</p>
+            <form action="/process_money" method="post">
+
+                <input  type="hidden" name="which_form" value="quest">
+                <input class="btn" type="submit" value="Find Gold!">
+            </form>
+        </div>
+        
+    </div>
+    <div class="container3">
+        <h4>
+            Activities:
+        </h4>
+        {% if context.color == "green" %}
+        <textarea  style="color: green;" name="textarea" id="" cols="130" rows="10">{{ context.text }}</textarea>
+        {% endif %}
+
+        {% if context.color == "red" %}
+        <textarea  style="color: red;" name="textarea" id="" cols="130" rows="10">{{ context.text }}</textarea>
+        {% endif %}
+    </div>
+</body>
+</html>
