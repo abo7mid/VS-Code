@@ -1,0 +1,17 @@
+# OperationalError
+# pymysql.err.OperationalError: (1049, "Unknown database 'notadb'")
+
+
+
+# Something went wrong (1146, "Table 'db.friend' doesn't exist")
+# False
+
+
+
+
+# UndefinedError
+# jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'first_name'
+
+
+#     print(friend[0])
+# KeyError: 0

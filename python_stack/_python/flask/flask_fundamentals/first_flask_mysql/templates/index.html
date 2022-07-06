@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+        </thead>
+    </tr>
+    <tr>
+    
+        {% for friend in all_friends %}
+        <td>
+            {{friend['id']}}
+        </td>
+        <td>
+            {{friend['firstname']}} {{friend['lastname']}}
+        </td>
+        <td>
+            {{friend['created_at']}}
+        </td>
+        <td>
+            {{friend['updated_at']}}
+        </td>
+    </tr>
+    {% endfor %}
+    
+</table>
+</body>
+</html>
