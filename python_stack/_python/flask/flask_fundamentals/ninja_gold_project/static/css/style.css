@@ -1,0 +1,81 @@
+.container1 {
+    /* border: 1px solid black; */
+    /* display: flex; */
+    /* margin:  0px auto; */
+    /* width: 400px; */
+    justify-content: space-between;
+    width: 1000px;
+
+    /* margin: 50px 25px; */
+    margin: 20px auto;
+
+}
+
+
+.container2 {
+    /* border: 1px solid black; */
+    display: flex;
+    margin: 20px auto;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+.container3 {
+    /* border: 1px solid black; */
+    width: 1000px;
+    margin: 0px auto;
+
+}
+
+.farm {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    
+
+}
+
+.cave {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+}
+
+.house {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+}
+
+.quest {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+
+
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin: 10px 30px;
+}
+
+.btn {
+    text-align: center;
+    border: 2px solid gold;
+    box-shadow: 3px 5px 5px black;
+}
+textarea{
+    overflow-y: scroll;
+    resize: none;
+}
