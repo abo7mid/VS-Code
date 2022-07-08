@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Favorite Books</title>
+{% endblock %}
+
+
+{%block navbar%}
+<div class="row">
+    <h6 class="col-10 m-3">Welcome, {{user.firstname}}!</h6>
+
+    <a class="col-1 mt-3" href="{% url 'logout' %}">logout</a>
+    <div class="border"></div>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container m-3">
+    <div class="row">
+        <div class="col-3 border">
+            <h3>Add a Favorite Book</h3>
+            {%if messages%}
+            {%for message in messages%}
+            <p {%if message.tags%} class="text-left alert alert-{{message.tags}}" {%endif%}>{{message}}</p>
+            {%endfor%}
+            {%endif%}
+            <form action="" method="post">
+                {%csrf_token%}
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" name="title" id="title">
+
+                <label class="form-label" for="desc">Descritpion</label>
+                <div class="input-group input-group-lg">
+
+                    <input class="form-control" type="text" name="desc" id="desc">
+                </div>
+
+                <input class="btn btn-primary form-label mt-1" type="submit" name="add" value="Add">
+            </form>
+        </div>
+
+        <div class="col-8 border m-3 mt-0 mb-0">
+            <h3>All Books</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>Fav/Unfav</th>
+                        <th>uploaded by</th>
+                        <th>users liked this book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for book in books%}
+                    <tr>
+                        <td>{{book.id}}</td>
+                        <td><a class="fst-italic" href="{% url 'viewBook' book.id %}">{{book.title}}</a></td>
+                        <td>
+
+                            <a class="btn btn-primary m-1 mt-0 mb-0" href="{% url 'Favorite'  book.id%}">+</a>
+                            <a class="btn btn-danger m-1 mt-0 mb-0" href="{% url 'Favorite'  book.id%}">-</a>
+                        </td>
+                        <td>{{book.uploaded_by.firstname}}</td>
+                        {%for likes in book.users_who_like.all%}
+                        <td>{{likes.firstname}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{%comment%}
+<div class="mb-4">
+    <a href="{% url 'viewBook' book.id %}">{{book.title}}</a>
+    <h6>(added by {{book.uploaded_by.firstname}})</h6>
+
+    {%if book.uploaded_by.id == user.id %}
+
+    <h6 class="fst-italic">this is one of your favorite</h6>
+
+    {%else%}
+    <a href="{% url 'Favorite'  book.id%}">Add to favorite</a>
+    {%endif%}
+</div>
+{% endcomment %}
