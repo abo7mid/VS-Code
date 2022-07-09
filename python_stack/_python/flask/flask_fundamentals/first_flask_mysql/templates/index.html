@@ -9,23 +9,33 @@
     <title>Document</title>
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 <table class="table">
     <tr>
         <thead>
             <th>ID</th>
             <th>Name</th>
+            <th>Occupation</th>
             <th>Created at</th>
             <th>Updated at</th>
         </thead>
     </tr>
+    {% for friend in all_friends %}
     <tr>
-    
-        {% for friend in all_friends %}
         <td>
             {{friend['id']}}
         </td>
         <td>
             {{friend['firstname']}} {{friend['lastname']}}
+        </td>
+        <td>
+            {{friend['occup']}}
         </td>
         <td>
             {{friend['created_at']}}
@@ -37,5 +47,18 @@
     {% endfor %}
     
 </table>
+
+<form action="/" method="post" class="mt-5">
+    <label class="form-label" for="fname">FirstName</label>
+    <input class="form-control" type="text" name="fname" id="fname">
+
+    <label class="form-label" for="lname">LastName</label>
+    <input class="form-control" type="text" name="lname" id="lname">
+
+    <label class="form-label" for="occup">Occupation</label>
+    <input class="form-control" type="text" name="occup" id="occup">
+
+    <input class="btn btn-primary m-2" type="submit" value="add" name="add">
+</form>
 </body>
 </html>
