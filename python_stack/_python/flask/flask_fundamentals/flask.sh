@@ -37,8 +37,8 @@ index="{% extends 'base.html'%}
 {%endblock%}"
 
 
-echo index > templates/index.html
-echo base > templates/base.html
+echo $index > templates/index.html
+echo $base > templates/base.html
 
 
 serverCode="from flask import Flask, render_template\n\n\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n\treturn render_template('index.html')\napp.run(debug=True)"
