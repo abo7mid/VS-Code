@@ -30,7 +30,9 @@ urlpatterns = [
 ]
 
 # potential errors
-# OperationalError no such table: TV_Shows_show
-# NoReverseMatch   Reverse for 'update' not found. 'update' is not a valid view function or pattern name
-# ValueError       too many values to unpack (expected 2) the cause "I forget to append () to the end fo the function"
-# AttributeError   'str' object has no attribute 'get'
+# OperationalError       no such table: TV_Shows_show
+# NoReverseMatch         Reverse for 'update' not found. 'update' is not a valid view function or pattern name
+# ValueError             too many values to unpack (expected 2) the cause "I forget to append () to the end fo the function"
+# AttributeError         'str' object has no attribute 'get'
+# UnboundLocalError      local variable 'var' referenced before assignment
+# MultiValueDictKeyError   
