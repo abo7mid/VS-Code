@@ -1,0 +1,27 @@
+{% extends 'base.html'%} 
+
+{%block head%}
+<title>Edit {{user[0]['id']}}</title>
+{%endblock%}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+{% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/users/{{user[0]['id']}}/edit" method="post" class="mt-5">
+    <label class="form-label" for="fname">First Name:</label>
+    <input class="form-control" type="text" name="efname" id="fname" value="{{user[0]['firstname']}}">
+
+    <label class="form-label" for="type">Last Name:</label>
+    <input class="form-control" type="text" name="elname" id="lname" value="{{user[0]['lastname']}}">
+
+    <label class="form-label" for="type">Email:</label>
+    <input class="form-control" type="email" name="eemail" id="email" value="{{user[0]['email']}}">
+
+    <input class="btn btn-primary m-2" type="submit" value="Update" name="update">
+</form>
+{%endblock%}

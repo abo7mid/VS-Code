@@ -1,0 +1,25 @@
+{% extends 'base.html'%} 
+
+{%block head%}
+<title>Create User</title>
+{%endblock%}
+
+
+{%block content%} 
+
+<h1>Add New User</h1>
+
+
+<form action="/users/new" method="post" class="mt-5">
+    <label class="form-label" for="fname">First Name:</label>
+    <input class="form-control" type="text" name="fname" id=fname">
+
+    <label class="form-label" for="type">Last Name:</label>
+    <input class="form-control" type="text" name="lname" id="lname">
+
+    <label class="form-label" for="type">Email:</label>
+    <input class="form-control" type="email" name="email" id="email">
+
+    <input class="btn btn-primary m-2" type="submit" value="Create" name="create">
+</form>
+{%endblock%}

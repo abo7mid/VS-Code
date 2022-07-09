@@ -1,0 +1,23 @@
+{% extends 'base.html'%} 
+
+
+{%block head%}
+<title>User Info</title>
+{%endblock%}
+
+{%block content%} 
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+{% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<h1 class="mb-5">User {{user[0]['id']}}</h1>
+<h3>Full Name: {{user[0]['firstname']}} {{user[0]['lastname']}}</h3>
+<h3>Email: {{user[0]['email']}}</h3>
+<h3>Created On: {{user[0]['created_at']}}</h3>
+<h3>Last Updated On: {{user[0]['updated_at']}}</h3>
+
+<a href="/users/{{user[0]['id']}}/edit">Edit</a>|<a href="/users/{{user[0]['id']}}/destroy">Delete</a>
+{%endblock%}
