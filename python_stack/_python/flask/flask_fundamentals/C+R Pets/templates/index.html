@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%block head%} <title>test</title> {%endblock%}
+{%block navbar%}{%endblock%}
+{%block content%}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+        {%for pet in pets%}
+        <tr>
+            <td>{{pet["id"]}}</td>
+            <td>{{pet["name"]}}</td>
+            <td>{{pet["type"]}}</td>
+        </tr>
+        {%endfor%}
+    </thead>
+</table>
+<form action="/" method="post" class="mt-5">
+    <label class="form-label" for="name">Name</label>
+    <input class="form-control" type="text" name="name" id="name">
+    <label class="form-label" for="type">Type</label>
+    <input class="form-control" type="text" name="type" id="type">
+
+    <input class="btn btn-primary m-2" type="submit" value="add" name="add">
+</form>
+{%endblock%}"
