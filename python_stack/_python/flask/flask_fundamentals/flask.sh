@@ -1,4 +1,4 @@
-path='/home/devmkh/Assignments/python_stack/_python/flask/flask_fundamentals'
+path='$HOME/Assignments/python_stack/_python/flask/flask_fundamentals'
 cd $path
 mkdir $1
 cd $1
@@ -46,3 +46,6 @@ serverCode="from flask import Flask, render_template\n\n\napp = Flask(__name__)\
 echo -e $serverCode > server.py
 
 
+## copy mysqlconnection class to current project
+
+cp $path/first_flask_mysql/mysqlconnection.py .
