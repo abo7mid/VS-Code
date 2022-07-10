@@ -14,20 +14,21 @@
             <h3>Submitted Info</h3>
 
             <p>
-                Name : {{ html_name }}
+                Name : {{ result[0]['name'] }}
             </p>
             <p>
-                Dojo Location : {{ html_location }}
+                Dojo Location : {{ result[0]['location'] }}
             </p>
 
             <p>
-                Favorite Language : {{ html_fav_lang }}
+                Favorite Language : {{ result[0]['fav_lang'] }}
             </p>
 
             <p>
-                Comment : {{ html_comment }}
+                Comment : {{ result[0]['comment'] }}
             </p>
-            <button class="btn2">Go Back</button>
+        
+            <a href="/" class="btn btn-default">Go Back</a>
         </div>
 
     </div>
