@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{%block head%}
+
+{%endblock%}
+
+
+{%block navbar%}
+
+{%endblock%}
+
+
+
+{%block content%}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    {% if category == "danger"%}
+    <p class="alert alert-{{category}} text-center">{{ message }}</p>
+    {%endif%}
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+{% block body %}{% endblock %}
+<form action="/" method="post">
+
+    <label class="form-label" for="email">Email:</label>
+    <input class="form-control" type="text" name="email">
+
+    <input class="btn btn-primary m-3" type="submit" value="Submit">
+</form>
+{%endblock%}
