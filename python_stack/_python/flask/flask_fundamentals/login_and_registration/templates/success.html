@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<title>dashboard</title>
+{%endblock%}
+{%block navbar%}
+<div class="d-flex justify-content-end m-3">
+    <a class="btn btn-danger" href="/logout">log out</a>
+</div>
+{%endblock%}
+{% block content %}
+<h1 class="text-success">Welcome {{user[0]['firstname']}} you're logged in </h1>
+{%endblock%}
