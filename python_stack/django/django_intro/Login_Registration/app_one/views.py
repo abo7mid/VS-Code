@@ -10,29 +10,28 @@ import bcrypt
 
 def index(request):
     if request.method == "POST":
-
         if request.POST.get("register"):
             print("registration")
             errors = User.objects.validate(request.POST)
             if len(errors) > 0:
-                print(errors)
-                print(type(request.POST['password']))
-                print(request.POST['confirmPassword'])
                 for key, value in errors.items():
                     messages.error(request, value)
                     return redirect('/')
             else:
-                user = User()
-                password = request.POST.get('password')
-                user.firstname = request.POST['firstname']
-                user.lastname = request.POST['lastname']
-                # user.username = request.POST['username']
-                user.email = request.POST['email']
-                user.password = bcrypt.hashpw(
-                    password.encode(), bcrypt.gensalt()).decode()
-                user.save()
-                messages.success(request, "User created successfully")
-                return redirect('/')
+                if User.objects.filter(email=request.POST['email']):
+                    messages.error(request,"Email exists!")
+                else:
+                    user = User()
+                    password = request.POST.get('password')
+                    user.firstname = request.POST['firstname']
+                    user.lastname = request.POST['lastname']
+                    # user.username = request.POST['username']
+                    user.email = request.POST['email']
+                    user.password = bcrypt.hashpw(
+                        password.encode(), bcrypt.gensalt()).decode()
+                    user.save()
+                    messages.success(request, "User created successfully")
+                    return redirect('/')
 
         if request.POST.get("login"):
             print("login")
