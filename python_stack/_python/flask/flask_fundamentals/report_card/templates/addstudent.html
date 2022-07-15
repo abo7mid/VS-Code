@@ -1,0 +1,29 @@
+
+{% extends 'base.html'%}
+
+{% block content %}
+
+<a class="d-flex justify-content-end m-4" href="/">Home</a>
+<h1>Add Students</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category,message in messages %}
+<p class="d-flex justify-content-center text-{{category}}">{{message}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form class="m-4" action="/addstudent" method="post">
+    <label class="form-label" for="firstname">First Name :</label>
+    <input class="form-control" type="text" id="firstname" name="firstname">
+    
+    <label class="form-label" for="lastname">Last Name :</label>
+    <input class="form-control" type="text" id="lastname" name="lastname">
+    
+    <label class="form-label" for="year">Year :</label>
+    <input class="form-control" type="number" id="year" name="year">
+    
+    <input class="btn btn-primary m-3" type="submit" value="Add">
+    
+</form>
+
+{%endblock%}

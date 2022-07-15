@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+
+
+{% block navbar %}
+<div class="d-flex justify-content-end m-3">
+
+    <a class="m-2" href="/">Dashboard </a> <span class="m-2">|</span> <a class="m-2" href="/{{id}}"> Report Card</a>
+</div>
+    {% endblock %}
+
+{%block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category,message in messages %}
+<p class="d-flex justify-content-center text-{{category}}">{{message}}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<h1>Add Grade</h1>
+
+<form class="m-4" action="/edit/{{id}}" method="post">
+    <label class="form-label" for="course">Course </label>
+    <input class="form-control" type="text" id="course" name="course">
+    
+    <label class="form-label" for="grade">Grade </label>
+    <input class="form-control" type="search" id="grade" name="grade">
+    
+    <label class="form-label" for="year">Date Graded :</label>
+    <input class="form-control" type="date" id="year" name="year">
+
+    <label class="form-label" for="comment">Comments :</label>
+    <textarea class="form-control" id="comment" name="comment"></textarea>
+    
+    <input class="btn btn-primary m-3" type="submit" value="Add">
+    
+</form>
+
+
+{%endblock%}
