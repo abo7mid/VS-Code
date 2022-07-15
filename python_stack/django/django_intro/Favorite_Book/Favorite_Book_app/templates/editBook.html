@@ -2,15 +2,31 @@
 
 {% block head %}
 <title>Favorite Books</title>
+
 {% endblock %}
+
+
 
 
 {%block navbar%}
 <div class="row">
-    <h6 class="col-10 m-3">Welcome, {{user.firstname}}!</h6>
-
+    <h6 class="col-10 m-3">Welcome, {{firstname}}!</h6>
+    
     <a class="col-1 mt-3" href="{% url 'logout' %}">logout</a>
     <div class="border"></div>
-
+    
 </div>
+{% endblock %}
+
+{%block content%}
+<form action="" method="post">
+    {%csrf_token%}
+    <label class="form-label" for="title">Title</label>
+    <input class="form-control" type="text" name="title" id="title" value="{{title}}">
+
+    <label class="form-label" for="desc">Descritpion</label>
+    <input class="form-control" type="text" name="desc" id="desc" value="{{desc}}">
+
+    <input class="btn btn-primary form-label mt-1" type="submit" name="update" value="Update">
+</form>
 {% endblock %}

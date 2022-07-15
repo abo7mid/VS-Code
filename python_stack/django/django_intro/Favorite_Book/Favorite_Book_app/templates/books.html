@@ -42,8 +42,7 @@
 
         <div class="col-8 border m-3 mt-0 mb-0">
             <h3>All Books</h3>
-            <table class="table">
-                <thead>
+            <!-- <table class="table">
                     <tr>
                         <th>id</th>
                         <th>title</th>
@@ -51,8 +50,7 @@
                         <th>uploaded by</th>
                         <th>users liked this book</th>
                     </tr>
-                </thead>
-                <tbody>
+
                     {%for book in books%}
                     <tr>
                         <td>{{book.id}}</td>
@@ -63,32 +61,44 @@
                             <a class="btn btn-danger m-1 mt-0 mb-0" href="{% url 'Favorite'  book.id%}">-</a>
                         </td>
                         <td>{{book.uploaded_by.firstname}}</td>
-                        {%for likes in book.users_who_like.all%}
-                        <td>{{likes.firstname}}</td>
-                        {% endfor %}
+                        
+                        <td>
+                            {%for likes in book.users_who_like.all%}
+                            {{likes.id}}
+                            {% endfor %}
+                        </td>
                     </tr>
                     {% endfor %}
-                </tbody>
-            </table>
+            </table> -->
 
+
+            {%for book in books%}
+            <a class="fst-italic" href="{% url 'viewBook' book.id %}">{{book.title}}</a>
+
+            <p class="fst-italic">
+                (Added by {{book.uploaded_by.firstname}})
+            </p>
+
+
+            <!-- <a class="btn btn-danger m-1 mt-0 mb-0" href="{% url 'Favorite'  book.id%}">Unfavorite</a> -->
+
+            {% endfor %}
+
+        {% endblock %}
+
+
+
+        {%comment%}
+        <div class="mb-4">
+            <a href="{% url 'viewBook' book.id %}">{{book.title}}</a>
+            <h6>(added by {{book.uploaded_by.firstname}})</h6>
+
+            {%if book.uploaded_by.id == user.id %}
+
+            <h6 class="fst-italic">this is one of your favorite</h6>
+
+            {%else%}
+            <a href="{% url 'Favorite'  book.id%}">Add to favorite</a>
+            {%endif%}
         </div>
-    </div>
-</div>
-{% endblock %}
-
-
-
-{%comment%}
-<div class="mb-4">
-    <a href="{% url 'viewBook' book.id %}">{{book.title}}</a>
-    <h6>(added by {{book.uploaded_by.firstname}})</h6>
-
-    {%if book.uploaded_by.id == user.id %}
-
-    <h6 class="fst-italic">this is one of your favorite</h6>
-
-    {%else%}
-    <a href="{% url 'Favorite'  book.id%}">Add to favorite</a>
-    {%endif%}
-</div>
-{% endcomment %}
+        {% endcomment %}

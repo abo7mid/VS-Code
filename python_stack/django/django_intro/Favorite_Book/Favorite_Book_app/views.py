@@ -131,9 +131,29 @@ def bookEdit(request,bookId):
     context = {
         "title":book.title,
         "desc":book.desc,
+        "firstname":book.uploaded_by.firstname,
         "user":request.session['userId'],
+
+
     }
+    if request.method == "POST":
+        if request.POST.get('update'):
+            errors = Book.objects.validate(request.POST)
+            if len(errors) > 0:
+                for key,value in errors.items():
+                    messages.error(request,value)
+                    print(errors)
+                    return redirect(reverse('editBook',kwargs={"bookId":book.id}))
+            else :
+                book = Book.objects.get(id=bookId)
+                book.title = request.POST.get('title')
+                book.desc = request.POST.get('desc')
+                book.save()
+                return redirect(reverse('editBook',kwargs={"bookId":book.id}))
     return render(request,'editBook.html',context)
+
+
+
 
 def logout(request):
     del request.session['userId']
