@@ -9,8 +9,13 @@ public class TestCafe {
         System.out.printf("Purchases needed by week 10: %s \n\n", cafe.getStreakGoal(11));
 
         System.out.println("----- Order Total Test-----");
-        double prices[] = { 5.2, 2.5, 4.9 };
+        double prices[] = { 5.2, 2.5, 4.9, 5.7};
         System.out.printf("Order total: %s \n\n", cafe.getOrderTotal(prices));
+
+
+
+
+
 
         System.out.println("----- Display Menu Test-----");
         ArrayList<String> menu = new ArrayList<String>();
@@ -18,7 +23,15 @@ public class TestCafe {
         menu.add("cappuccino");
         menu.add("latte");
         menu.add("mocha");
-        cafe.displayMenu(menu);
+
+
+        ArrayList<Double> prices_ = new ArrayList<Double>();
+        prices_.add(5.1);
+        prices_.add(5.2);
+        prices_.add(5.3);
+        prices_.add(5.4);    
+        
+        cafe.displayMenu(menu,prices_);
 
         System.out.println("\n----- Add Customer Test-----");
         ArrayList<String> customers = new ArrayList<String>();
