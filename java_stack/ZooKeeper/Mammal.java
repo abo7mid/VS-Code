@@ -5,7 +5,11 @@ public class Mammal {
 
 
     public Mammal(){
-        this.energyLevel = 100;
+        this.energyLevel = 100; 
+        //default energy for all Mammals
+    }
+    public Mammal(int energyLevel){
+        this.energyLevel = energyLevel;
     }
 
     public int displayEnergy(){
@@ -14,9 +18,9 @@ public class Mammal {
         return this.energyLevel;
     }
 
+    public void setEnergy(int energyLevel){
+        this.energyLevel = energyLevel;
+    }
 
-    // testing override, this methods is for practicing method overriding
-    //     public void testMethod(){
-    //         System.out.println("Mammal method");
-    //     }
+
 }
