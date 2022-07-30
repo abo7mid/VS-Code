@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+.container{
+	display: flex;
+}
+
+.grid-container{
+	display: grid;
+}
+.time{
+   color: green;
+   text-align: center;	
+
+ 
+}
+
+.date{
+	color: blue;
+    text-align: center;	
+}
