@@ -7,15 +7,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>PokeBook</title>
+<title>Edit My Task</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
 <body>
 	<div class="container">
-		<h1>PokeBook</h1>
-		<table class="table">
+
+<%-- 		<table class="table">
 			<thead>
 				<tr>
 					<th>Expense</th>
@@ -33,13 +33,21 @@
 					</tr>
 				</c:forEach> 
 			</tbody>
-		</table>
+		</table> --%>
 		<%@ taglib prefix="form"
 			uri="http://www.springframework.org/tags/form"%>
 
 
 <div class="container">
-			<h1 class="">Track an expense</h1>
+			<div class="row mt-3">
+				<div class="col-11">
+					<h1 class="text-success">Edit expense</h1>
+
+				</div>
+				<div class="col">
+					<a href="/expenses">Go Back</a>
+				</div>
+			</div>
 
 			<%@ page isErrorPage="true" %>  
 			<form:form action="/expenses/edit/${poke.id}" method="post" modelAttribute="poke">
@@ -62,12 +70,12 @@
 
 			<div class="mb-3">
 				<label for="description" class="form-label">Description:</label>
-				<form:textarea style="resize:none;" cssErrorClass="form-control is-invalid" cssClass="form-control" path="description"></form:textarea>
+				<form:textarea rows="5" style="resize:none;" cssErrorClass="form-control is-invalid" cssClass="form-control" path="description"></form:textarea>
 				<form:errors path="description" cssClass="invalid-feedback" />
 			</div>
 			
 			<div class="d-flex justify-content-end">
-				<button type="submit" class="btn btn-primary">Send</button>
+				<button type="submit" class="btn btn-primary">Update</button>
 			</div>
 		</form:form>
 </div>

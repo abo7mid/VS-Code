@@ -14,24 +14,44 @@
 </head>
 <body>
 	<div class="container">
-		<h1>PokeBook</h1>
+		<h1 class="text-primary">View All expenses</h1>
 		<table class="table">
 			<thead>
 				<tr>
 					<th>Expense</th>
 					<th>Vendor</th>
 					<th>Amount</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 				<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 				<c:forEach items="${poke1}" var="poke">
 					<tr>
-						<td><c:out value="${poke.expense}"></c:out></td>
+						<td><a href="/expenses/${poke.id}"><c:out value="${poke.expense}"></c:out></a></td>
 						<td><c:out value="${poke.vendor}"></c:out></td>
 						<td><c:out value="${poke.amount}"></c:out></td>
+						<td><div class="row">
+								<div class="col-3">
+									<a class="" href="expenses/edit/${poke.id}">edit</a>
+								</div>
+								<%-- <div class="col">
+								<a class="btn btn-danger" href="expenses/delete/${poke.id}">delete</a>
+						       </div> --%>
+
+								<div class="col">
+									<form action="expenses/delete/${poke.id}" method="post">
+									<input type="hidden" name="_method" value="delete" />
+										<div class="">
+											<!-- <button type="submit" class="btn btn-danger">Delete</button> -->
+											<input class="btn btn-danger" type="submit" value="Delete" />
+										</div>
+									</form>
+								</div>
+
+							</div></td>
 					</tr>
-				</c:forEach> 
+				</c:forEach>
 			</tbody>
 		</table>
 		<%@ taglib prefix="form"
@@ -39,7 +59,7 @@
 
 
 <div class="container">
-			<h1 class="">Track an expense</h1>
+			<h1 class="text-primary">Track an expense</h1>
 			<c:if test="${created != null}">
 				<p class="alert alert-success text-center">
 					<c:out value="${created}"></c:out>
@@ -48,6 +68,11 @@
 			<c:if test="${updated != null}">
 				<p class="alert alert-success text-center">
 					<c:out value="${updated}"></c:out>
+				</p>
+			</c:if>
+			<c:if test="${deleted != null}">
+				<p class="alert alert-success text-center">
+					<c:out value="${deleted}"></c:out>
 				</p>
 			</c:if>
 			<form:form action="/expenses" method="post" modelAttribute="poke">
@@ -75,7 +100,7 @@
 			</div>
 			
 			<div class="d-flex justify-content-end">
-				<button type="submit" class="btn btn-primary">Send</button>
+				<button type="submit" class="btn btn-primary">Create</button>
 			</div>
 		</form:form>
 </div>
