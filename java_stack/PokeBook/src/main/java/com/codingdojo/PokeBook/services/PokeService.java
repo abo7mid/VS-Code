@@ -15,31 +15,32 @@ public class PokeService {
 	@Autowired
 	PokeRepository pokeRepo;
 	
-	public void  deleteBook(Long id) {
+	public void  deletePoke(Long id) {
 		 pokeRepo.deleteById(id);
 		
 	}
 
-	public Poke createBook(Poke b) {
+	public Poke createPoke(Poke b) {
 		return pokeRepo.save(b);
 		
 	}
-	public Poke updateBook(Poke b) {
+	public Poke updatePoke(Poke b) {
 		return pokeRepo.save(b);
 				
 	}
 	
-	public List<Poke> getBooks() {
+	public List<Poke> getPoke() {
 		return pokeRepo.findAll();
 	}
 	
-	public Optional<Poke> findBookApi(Long id) {
+	public Optional<Poke> findPokeApi(Long id) {
 		return pokeRepo.findById(id);
 	}
-	public Poke findBook(Long id) {
-       Optional<Poke> optionalBook = pokeRepo.findById(id);
-       if(optionalBook.isPresent()) {
-           return optionalBook.get();
+	
+	public Poke findPoke(Long id) {
+       Optional<Poke> optionalPoke = pokeRepo.findById(id);
+       if(optionalPoke.isPresent()) {
+           return optionalPoke.get();
        } else {
            return null;
        } 

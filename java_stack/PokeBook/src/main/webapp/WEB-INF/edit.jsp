@@ -40,18 +40,10 @@
 
 <div class="container">
 			<h1 class="">Track an expense</h1>
-			<c:if test="${created != null}">
-				<p class="alert alert-success text-center">
-					<c:out value="${created}"></c:out>
-				</p>
-			</c:if>
-			<c:if test="${updated != null}">
-				<p class="alert alert-success text-center">
-					<c:out value="${updated}"></c:out>
-				</p>
-			</c:if>
-			<form:form action="/expenses" method="post" modelAttribute="poke">
-			<!-- <input type="hidden" name="_method" value="put"> -->
+
+			<%@ page isErrorPage="true" %>  
+			<form:form action="/expenses/edit/${poke.id}" method="post" modelAttribute="poke">
+			<input type="hidden" name="_method" value="put">
 			<div class="mb-3">
 				<form:label for="expense" path="expense" class="form-label">Expense Name:</form:label>
 				<form:input type="text" cssErrorClass="form-control is-invalid" cssClass="form-control" path="expense" />

@@ -92,6 +92,13 @@ public class Poke {
 		public void setAmount(Double amount) {
 			this.amount = amount;
 		}
+		public Long getId() {
+			return id;
+		}
+		
+		public void setId(Long id) {
+			this.id = id;
+		}
 
 		public String getDescription() {
 			return description;
